@@ -880,22 +880,22 @@ export const ordersGrid = [
   {
     field: 'OrderItems',
     headerText: 'Item',
-    width: '150',
+    width: '120',
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
   { field: 'CustomerName',
-    headerText: 'Customer Name',
+    headerText: 'Customer',
     width: '150',
     textAlign: 'Center',
   },
   {
     field: 'TotalAmount',
-    headerText: 'Total Amount',
+    headerText: 'Amount',
     format: 'C2',
     textAlign: 'Center',
     editType: 'numericedit',
-    width: '150',
+    width: '100',
   },
   {
     headerText: 'Status',
@@ -907,14 +907,14 @@ export const ordersGrid = [
   {
     field: 'OrderID',
     headerText: 'Order ID',
-    width: '120',
+    width: '100',
     textAlign: 'Center',
   },
 
   {
     field: 'Location',
     headerText: 'Location',
-    width: '150',
+    width: '120',
     textAlign: 'Center',
   },
 ];
