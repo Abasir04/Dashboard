@@ -7,7 +7,7 @@ import { Header } from '../components'
 
 const Orders = () => {
   return (
-    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+    <div className='mx-0.5 my-1 md:m-10 py-1 md:p-10 bg-white rounded-3xl overflow-x-hidden'>
       <Header 
         category="Page"
         title="Orders"
