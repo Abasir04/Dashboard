@@ -18,7 +18,6 @@ const Customers = () => {
         allowSorting
         toolbar={['Delete', 'Search']}
         editSettings={{ allowDeleting:true, allowEditing:true }}
-        className="flex justify-between items-center"
       >
         <ColumnsDirective>
         {customersGrid.map((item, index) => (
