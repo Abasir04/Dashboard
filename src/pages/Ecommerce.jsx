@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BsCurrencyDollar } from 'react-icons/bs'
+// import { BsCurrencyDollar } from 'react-icons/bs'
 import { GoDotFill } from "react-icons/go";
 
 
@@ -10,8 +10,10 @@ import { earningData, SparklineAreaData } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext()
+
   return (
-    <div className="mt-12">
+    <div className="pt-6 dark:bg-slate-400">
 
       {/* Top Box */}
       <div className="flex flex-wrap lg:flex-nowrap xl:mx-auto justify-content">
@@ -21,14 +23,14 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-800">Earnings</p>
-              <p className="text-2xl">$65,420</p>
+              <p className="text-2xl dark:text-gray-800">$65,420</p>
             </div>
           </div>
           <div className="mt-6">
             <Button
               size='md'
               color='white'
-              bgColor='blue'
+              bgColor={currentColor}
               text='Download'
               borderRadius='10px'
             />
@@ -57,7 +59,7 @@ const Ecommerce = () => {
                   {item.percentage}
                 </span>
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-gray-600 dark:text-white mt-1">
                 {item.title}
               </p>
             </div>
@@ -76,7 +78,7 @@ const Ecommerce = () => {
               Revenue Updates
             </p>
             <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
+              <p className="flex items-center gap-2 text-gray-600 dark:text-white hover:drop-shadow-xl">
                 <span><GoDotFill /></span>
                 <span>Expenses</span>
               </p>
@@ -103,7 +105,7 @@ const Ecommerce = () => {
                     %29
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">
+                <p className="text-gray-500 dark:text-white mt-1">
                   Budget
                 </p>
               </div>
@@ -113,7 +115,7 @@ const Ecommerce = () => {
                     $34,620
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">
+                <p className="text-gray-500 dark:text-white mt-1">
                   Expenses
                 </p>
               </div>
@@ -133,7 +135,7 @@ const Ecommerce = () => {
               <div className="mt-10">
                 <Button 
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download"
                   borderRadius="10px"
                 />

@@ -11,10 +11,10 @@ import './App.css'
 import { useStateContext } from './contexts/ContextProvider'
 
 const App = () => {
-  const { activeMenu } = useStateContext()
+  const { activeMenu, currentColor, themeSettings, setThemeSettings, currentMode } = useStateContext()
 
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className='flex relative dark:bg-main-dark-bg'>
 
@@ -34,6 +34,8 @@ const App = () => {
             </div>
           
             <div>
+              {themeSettings && <ThemeSettings />}
+
               <Routes>
                 {/* dashboard */}
                 <Route path="/" element={<Ecommerce />}/>
@@ -65,7 +67,12 @@ const App = () => {
 
           <div className='fixed right-4 bottom-4' style={{ zIndex: "10" }}>
             <TooltipComponent content='Settings' position='Top'>
-              <button type='button' className='text-2xl p-3 mx-2 hover:drop-shadow-xl hover:bg-light-gray text-black' style={{ background: 'blue', borderRadius: '50%' }}>
+              <button 
+                type='button' 
+                style={{ background: currentColor, borderRadius: '50%' }}
+                className='text-2xl p-3 mx-2 hover:drop-shadow-xl hover:bg-light-gray text-black' 
+                onClick={() => setThemeSettings(true)}
+              >
                 <FiSettings />
               </button>
             </TooltipComponent>

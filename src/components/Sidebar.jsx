@@ -10,9 +10,9 @@ import { useStateContext } from '../contexts/ContextProvider'
 
 const Sidebar = () => {
 
-  const {activeMenu, setActiveMenu, screenSize} = useStateContext()
+  const {activeMenu, setActiveMenu, screenSize, currentColor} = useStateContext()
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 mr-1 rounded-lg text-black text-xl p-5'
-  const nonActiveLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 hover:bg-black hover:text-white dark:text-gray-200 dark:hover:text-black m-2'
+  const nonActiveLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 hover:bg-gray-300 dark:hover:text-black dark:text-gray-200 dark:hover:text-black m-2'
 
   const handleCloseSideBar = () => {
     if(activeMenu && screenSize <= 900){
@@ -23,6 +23,7 @@ const Sidebar = () => {
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
       {activeMenu && (<> 
+        {/* shoppy icon */}
         <div className="flex justify-between items-center">
           <Link to="/" onClick={() => handleCloseSideBar()} className='flex items-center gap-3 ml-3 mt-4 text-xl font-extrabold tracking-tight dark:text-white text-slate-900'>
             <SiShopware /><span>Shoppy</span>
@@ -34,6 +35,7 @@ const Sidebar = () => {
           </TooltipComponent>
         </div>
 
+        {/* link group */}
         <div className="mt-10">
           {links.map((item) => (
             <div key={(item.title)}>
@@ -41,10 +43,13 @@ const Sidebar = () => {
                 {item.title}
               </p>
               {item.links.map((link) => (
+
+                // link item
                 <NavLink
                   to={`/${link.name}`}
                   key={link.name}
                   onClick={() => handleCloseSideBar()}
+                  style={({isActive}) => ({backgroundColor: isActive ? currentColor : ''})}
                   className={({ isActive }) =>  isActive ? activeLink : nonActiveLink}
                 >
                   {link.icon}
@@ -52,6 +57,7 @@ const Sidebar = () => {
                     {link.name}
                   </span>
                 </NavLink>
+
               ))}
             </div>
           ))}
