@@ -407,12 +407,12 @@ export const customersGrid = [
     format: 'yMd',
     textAlign: 'Center',
     template: customerGridStatus },
-  {
-    field: 'Weeks',
-    headerText: 'Weeks',
-    width: '100',
-    format: 'C2',
-    textAlign: 'Center' },
+  // {
+  //   field: 'Weeks',
+  //   headerText: 'Weeks',
+  //   width: '100',
+  //   format: 'C2',
+  //   textAlign: 'Center' },
   { field: 'Budget',
     headerText: 'Budget',
     width: '100',
@@ -634,7 +634,7 @@ export const earningData = [
   },
   {
     icon: <FiBarChart />,
-    amount: '423,39',
+    amount: '42,339',
     percentage: '+38%',
     title: 'Sales',
     iconColor: 'rgb(228, 106, 118)',

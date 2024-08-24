@@ -7,13 +7,13 @@ import { Header } from '../components'
 
 const Orders = () => {
   return (
-    <div className='mx-0.5 my-1 md:m-10 py-1 md:p-10 dark:bg-slate-400 bg-white rounded-3xl overflow-x-hidden'>
+    <div className='mx-0.5 my-1 md:m-10 py-1 md:p-10 dark:bg-secondary-dark-bg bg-white rounded-3xl overflow-x-hidden'>
       <Header 
         category="Page"
         title="Orders"
       />
       <GridComponent
-        id="gridcomp"
+        id="gridcomponent"
         dataSource={ordersData}
         allowPaging
         allowSorting

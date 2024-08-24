@@ -13,7 +13,7 @@ const Ecommerce = () => {
   const { currentColor } = useStateContext()
 
   return (
-    <div className="pt-6 dark:bg-slate-400">
+    <div className="pt-6">
 
       {/* Top Box */}
       <div className="flex flex-wrap lg:flex-nowrap xl:mx-auto justify-content">
